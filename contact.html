@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ============ Font Awesome ================ -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- =================Gsap Animations ============ -->
+    <!-- ================== Swup animtions ================ -->
+    <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+
+    <!-- ==========================Swup Animations -->
+    <script src="https://unpkg.com/@swup/js-plugin@3"></script>
+
+    <!-- =============stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
+    <title>Daniel's Portfolio</title>
+  </head>
+  <body>
+    <div id="swup" class="transition-fade">
+      <nav class="navbar" id="nav">
+        <a href="index.html" class="logo">DanielMac</a>
+
+        <ul class="nav_list">
+          <li class="nav_links">
+            <a href="/public/index.html" class="nav_items" data-no-swup>Home</a>
+          </li>
+          <li class="nav_links">
+            <a href="/public/index.html" class="nav_items" data-no-swup>About</a>
+          </li>
+          <li class="nav_links">
+            <a href="/public/portfolio.html" class="nav_items" data-no-swup
+              >Portfolio</a
+            >
+          </li>
+          <li class="nav_links">
+            <a href="contact.html" class="nav_items" data-no-swup>Contact</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+
+        <div class="hamburger-nav-list">
+          <ul>
+            <li><a href="/public/index.html" class="nav_items" data-no-swup>
+              <i class="fa-solid fa-house"></i>Home</a></li>
+            <li><a href="/public/index.html" class="nav_items" data-no-swup>
+              <i class="fa-solid fa-book"></i>About</a></li>
+            <li><a href="/public/portfolio.html" class="nav_items" data-no-swup>
+              <i class="fa-brands fa-artstation"></i>Portfolio</a></li>
+            <li><a href="/public/contact.html" class="nav_items" data-no-swup>
+              <i class="fa-solid fa-address-book"></i>Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="overlay" id="overlay"></div>
+      <div id="placeholder"></div>
+      
+      <main>
+        <div class="contact_container">
+            <div class="contact_title">
+                <h1>Contact Me</h1>
+                <span class="contact_sub-title">Let's bring your idea's to life!</span>
+            </div>
+
+            <div class="contact_form">
+                <form id="form" action="" method="GET">
+                    <div class="name">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter Name..." />
+                        <div id="nameError"></div>
+                      </div>
+                    <div class="phone">
+                        <label for="phone">Phone</label>
+                        <input type="text" id="phone" name="phone" placeholder="Enter Phone Number..." />
+                        <div id="phoneError"></div>
+                      </div>
+                    <div class="email">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your Email..." />
+                        <div id="emailError"></div>
+                      </div>
+                    <div class="message">
+                      <textarea id="messages" rows="3" cols="25">Message</textarea>
+                    </div>
+                    <button type="submit" class="submit">Send</button>
+                </form>
+            </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer_cta">
+          <div class="footer_link">
+            <span>Portfolio</span>
+            <a href="index.html">Home</a>
+            <a href="#info">About</a>
+            <a href="/public/portfolio.html">Portfolio</a>
+            <a href="/public/contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer_cta">
+          <div class="footer_link">
+            <span>Socials</span>
+            <a href="#">
+              <i class="fa-brands fa-github" class="socials"></i>
+            </a>
+            <a href="#">
+              <i class="fa-brands fa-linkedin" class="socials"></i>
+            </a>
+            <a href="#">
+              <i class="fa-solid fa-envelope" class="socials"></i>
+            </a>
+          </div>
+        </div>
+        <div class="copyright">
+          <span>Copyright &copy; 2023, Daniel's Portfolio. All Right Reserved.</span>
+        </div>
+      </footer>
+
+      <!-- =====================Javascript Form Validation  -->
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('form');
+
+        form.addEventListener('submit', (e) => {
+          const name = document.getElementById('name');
+          const email = document.getElementById('email');
+          const phone = document.getElementById('phone');
+          const error = document.getElementById('error');
+          const nameError = document.getElementById('nameError');
+          const phoneError = document.getElementById('phoneError');
+          const emailError = document.getElementById('emailError');
+
+            let errorMessages = []
+
+            if (name.value.trim() === '') {
+             errorMessages.push('Please enter your first name');
+             nameError.innerHTML = 'Please enter your first name.';
+            } else {
+              nameError.innerHTML = '';
+            }
+
+            if (phone.value.trim() === '') {
+            errorMessages.push('Please enter a Valid Phone Number.');
+            phoneError.innerHTML = 'Please enter a Valid Phone Number.';
+            } else {
+              phoneError.innerHTML = '';
+            }
+
+            if (email.value.trim() === '') {
+             errorMessages.push('Please Enter a Valid Email Address');
+             emailError.innerHTML = 'Please Enter a Valid Email Address';
+            } else {
+              emailError.innerHTML = '';
+            }
+
+            if (errorMessages.length > 0) {
+              e.preventDefault();
+              err.innerHTML = errorMessages.join('<br>');
+            }
+          });
+        });
+      </script>
+      <!-- =====================Javascript Form Validation  -->
+      <script src="./index.js"></script>
+  </body>
+</html>
+
+
+<!-- ========================================== -->

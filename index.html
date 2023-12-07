@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ============ Font Awesome ================ -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- =================Gsap Animations ============  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+
+    <!-- ==========================Swup Animations -->
+    <script src="https://unpkg.com/@swup/js-plugin@3"></script>
+
+    <!-- =============stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
+    <title>Daniel's Portfolio</title>
+  </head>
+  <body>
+    <div id="swup" class="transition-fade">
+      <nav class="navbar" id="nav">
+        <a href="index.html" class="logo"><span>Daniel</span>Mac</a>
+
+        <ul class="nav_list">
+          <li class="nav_links">
+            <a href="/public/index.html" class="nav_items" data-no-swup>Home</a>
+          </li>
+          <li class="nav_links">
+            <a href="#info" class="nav_items" data-no-swup>About</a>
+          </li>
+          <li class="nav_links">
+            <a href="/public/portfolio.html" class="nav_items" data-no-swup
+              >Portfolio</a
+            >
+          </li>
+          <li class="nav_links">
+            <a href="contact.html" class="nav_items" data-no-swup>Contact</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+
+        <div class="hamburger-nav-list">
+          <ul>
+            <li>
+              <a href="/public/index.html" class="nav_items" data-no-swup>
+                <i class="fa-solid fa-house"></i>Home</a
+              >
+            </li>
+            <li>
+              <a href="/public/index.html" class="nav_items" data-no-swup>
+                <i class="fa-solid fa-book"></i>About</a
+              >
+            </li>
+            <li>
+              <a href="/public/portfolio.html" class="nav_items" data-no-swup>
+                <i class="fa-brands fa-artstation"></i>Portfolio</a
+              >
+            </li>
+            <li>
+              <a href="/public/contact.html" class="nav_items" data-no-swup>
+                <i class="fa-solid fa-address-book"></i>Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="overlay" id="overlay"></div>
+      <div id="placeholder"></div>
+
+      <!--  =============== Header Section ================= -->
+      <header class="header_content" id="fadeIn">
+        <div class="main_header-content">
+          <h1 id="title">Hi, I'm Daniel .</h1>
+          <span
+            >I'm a frontend developer raised in <br />Vancouver Canada, British
+            Columbia</span
+          >
+          <div class="resume_cv_cta">
+            <div class="resume_cta" download>
+              <a href="/assets/Daniel M - CoverL1 (7).pdf" class="resume_sub">
+                <i class="fa-solid fa-arrow-right"></i>Download CV</a
+              >
+            </div>
+
+            <div class="resume_cta" download>
+              <a href="/assets/DM's Resume1.pdf" class="resume_sub">
+                <i class="fa-solid fa-arrow-right"></i>Resume</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="sub_header-content">
+          <div class="content_image">
+            <img src="/public/assets/Screenshot_20230509_190747_Gallery.jpg" />
+          </div>
+        </div>
+      </header>
+
+      <section class="main_cta">
+        <div class="main_cta-title">
+          <div class="arrow">
+            <i class="fa-solid fa-arrow-down"></i>
+          </div>
+          <h1 id="main_cta" class="arrow scroll-to-learn-more">
+            <span>Scroll to</span> learn more
+          </h1>
+        </div>
+      </section>
+
+      <!--  ======================= About Section ===================== -->
+      <section>
+        <article>
+          <div class="about_me" id="info">
+            <div class="about_me-info">
+              <h2>A little bit About Me</h2>
+              <p>
+                I am a front-end developer with a passion about creating
+                beautiful and unique websites. with a strong understanding in
+                both Frontend Development and Backend Development. I'm a highly
+                motivated individual who finds lots of interest in building
+                functional and visually appealing web applications. My journey
+                in programming has provided me with a solid foundation in
+                front-end/UI development with a solid understanding of HTML, CSS
+                and JavaScript along with other frameworks.
+              </p>
+            </div>
+          </div>
+
+          <div class="specialization">
+            <div class="specialize">
+              <h3>What I Specialize in...</h3>
+            </div>
+
+            <div class="specialization_cards">
+              <div class="card" id="content_card">
+                <h4 class="card-title">Frontend Development</h4>
+                <p>
+                  As a frontend developer. I specialize in creating visually
+                  appealing and user-friendly experiences through a wide varity
+                  of tools & frameworks.
+                </p>
+              </div>
+              <div class="card" id="content_card1">
+                <h4 class="card-title">UI/UX</h4>
+                <p>
+                  As a UI/UX Designer, I Specialize in creating web applications
+                  utilizing tools such a figma and other design platforms to
+                  create a user centric experience.
+                </p>
+              </div>
+              <div class="card" id="content_card2">
+                <h4 class="card-title">Web Accessability</h4>
+                <p>
+                  Ensuring inclusive and accessible web experiences is <br />a
+                  priority in my development approach. I am committed to
+                  implementing web accessibility standards, such as WCAG, to
+                  make sure that everyone can navigate and interact with the web
+                  applications.
+                </p>
+              </div>
+
+              <div class="portfolio_cta">
+                <div class="portfolio_info">
+                  <h5>Check out my Portfolio</h5>
+                </div>
+                <div class="transition-wipe overlay"></div>
+                <div
+                  class="portfolio_cta-link swup"
+                  data-swup-transition="fade"
+                >
+                  <a href="/public/portfolio.html">Projects</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <footer class="footer">
+        <div class="footer_cta">
+          <div class="footer_link">
+            <span>Portfolio</span>
+            <a href="index.html">Home</a>
+            <a href="#info">About</a>
+            <a href="/public/portfolio.html">Portfolio</a>
+            <a href="/public/contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer_cta">
+          <div class="footer_link">
+            <span>Socials</span>
+            <a href="#">
+              <i class="fa-brands fa-github" class="socials"></i>
+            </a>
+            <a href="#">
+              <i class="fa-brands fa-linkedin" class="socials"></i>
+            </a>
+            <a href="#">
+              <i class="fa-solid fa-envelope" class="socials"></i>
+            </a>
+          </div>
+        </div>
+        <div class="copyright">
+          <span
+            >Copyright &copy; 2023, Daniel's Portfolio. All Right
+            Reserved.</span
+          >
+        </div>
+      </footer>
+    </div>
+
+    <!-- ============ Index.js/swup File ============= -->
+    <script src="https://unpkg.com/swup@4"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
